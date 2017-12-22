@@ -38,21 +38,25 @@ hbs.registerHelper('screamIt', (text) => {
 app.get('/', (req, res) => {
     res.render('home.hbs', {
         pageTitle: 'Home Page',
-        welcomeMessage: 'Welcome to my site',
-        currnetYear: new Date().getFullYear()
+        welcomeMessage: 'Welcome to my site'
     });
 });
 
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
-        pageTitle: 'About Page',
-        currnetYear: new Date().getFullYear()
+        pageTitle: 'About Page'
     });
 });
 
 app.get('/bad', (req, res) => {
     res.send({
         errorMessage: 'Unable to handle request'
+    });
+});
+
+app.get('/portfolio', (req, res) => {
+    res.render('portfolio.hbs', {
+        pageTitle: 'Portfolio Page'
     });
 });
 
